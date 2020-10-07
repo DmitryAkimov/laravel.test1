@@ -1,5 +1,5 @@
-@extends('layout.mainlayout')
-
+@extends('layout.mdm')
+@section('title', $employee->FIO)
 @section('content')
 
 <style>
@@ -27,37 +27,31 @@
             </thead>
 
             <tbody>
-
                <tr>
                     <td>Должность</td>
-                    <td>{{ $employee->title }}</td>
+                    <td>{{ $employee->position }}</td>
+                </tr>
+                <tr>
+                    <td>Подразделение</td>
+                    <td>{{ $employee->department }}</td>
+                </tr>
+
+                <tr>
+                    <td>Приём</td>
+                    <td>{{ $employee->hiring->format("d.m.Y") }}</td>
+                </tr>
+                <tr>
+                    <td>Офис</td>
+                    <td>{{ $employee->branch }}</td>
                 </tr>
                 <tr>
                     <td>employeeID</td>
                     <td>{{ $employee->employeeID }}</td>
                 </tr>
                 <tr>
-                    <td>Старт</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Финиш</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Статус</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>ЦФО</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Бюджет</td>
-                    <td></td>
-                </tr>
-                </tr>
-
+                    <td>Сбор загрузки</td>
+                    <td>{{ $employee->isTimesheets }}</td>
+                </tr>    
             </tbody>
         </table>
 

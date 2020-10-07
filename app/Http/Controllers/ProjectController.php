@@ -17,7 +17,14 @@ class ProjectController extends Controller
         $params = ($request->all());
         $filter = isset($params['$filter']) ? strtoupper($params['$filter']) : 'ACTIVE';
         $projects = Project::all($filter);
-        return view('project_index', ['projects' => $projects]);
+
+        return view('project.list', ['projects' => $projects]);
+    }
+
+    public function indexAll(Request $request)
+    {
+        $projects = Project::all('ALL');
+        return view('project.list', ['projects' => $projects]);
     }
 
     /**
@@ -49,16 +56,13 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
-        echo 'PROJECT ' .$id;
-        if (strtoupper($id)=='$FILTER=ALL') {
+        if ((strtoupper($id) == '$FILTER=ALL') || (strtoupper($id) == 'ALL')) {
             $projects = Project::all('ALL');
-            return view('project_index', ['projects' => $projects]);
+            return view('project.list', ['projects' => $projects]);
         } else {
             $project = Project::findOrFail($id);
-            return view('project_show', ['project' => $project]);
+            return view('project.item', ['project' => $project]);
         }
- 
     }
 
     /**

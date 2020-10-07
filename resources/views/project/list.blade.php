@@ -1,9 +1,6 @@
-@extends('layout.mainlayout')
-
-
-
+@extends('layout.mdm')
+@section('title', 'Projects')
 @section('content')
-
 
 <div class="container-fluid">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -11,7 +8,7 @@
             <input type="radio" name="options" id="project_filter_active" autocomplete="off" onclick="window.location.href='/project';" checked> Активные
         </label>
         <label class="btn btn-secondary">
-            <input type="radio" name="options" id="project_filter_all" onclick="window.location.href='/project?$filter=all';" autocomplete="off"> Все
+            <input type="radio" name="options" id="project_filter_all" onclick="window.location.href='/project/all';" autocomplete="off"> Все
         </label>
     </div>
    

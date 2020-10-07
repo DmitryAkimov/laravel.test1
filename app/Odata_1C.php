@@ -17,10 +17,17 @@ class Odata_1C
             'USERNAME' => 'webreader',
             'PASSWORD' => 'DU2xy8mi'
 
+        ],
+        '1CZUP_TEST' => [
+            'URL' => 'http://m1c-dev1/1cdev-zup-uu/hs/employee/',
+            'USERNAME' => 'webreader',
+            'PASSWORD' => 'webreader'
+
         ]
+
     ];
     //_____________________________________________________________________
-    public static function getJSON($odata_name, $params)
+    public static function getJSON($odata_name, $params=[])
     {
         if (isset(Odata_1C::$connections[$odata_name])) {
             $odata = Odata_1C::$connections[$odata_name];
@@ -28,9 +35,11 @@ class Odata_1C
             echoError('Беда '.$odata_name);
             die;
         }
-
-        $url = $odata['URL'] . urlencode($params['entity']) . '?$format=json';
-        unset($params['entity']);
+        $url = $odata['URL'] ;
+        if (isset($params['entity'])) {
+            $url = $url . urlencode($params['entity']) . '?$format=json';
+            unset($params['entity']);
+        }
 
         foreach ($params as $key => $item) {
             if (strlen($item) > 0) {

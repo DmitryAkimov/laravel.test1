@@ -3,7 +3,7 @@
     <div class="container">
 
 
-        <p>Spectrum &copy; <?php ?></p>
+        <p>Spectrum &copy; <?php date("Y") ?></p>
 
         </div>
 

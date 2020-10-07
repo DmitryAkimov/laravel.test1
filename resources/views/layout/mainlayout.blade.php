@@ -5,7 +5,6 @@
 <head>
 
     @include('layout.partials.head')
- 
 
 </head>
 
@@ -20,7 +19,6 @@
     @include('layout.partials.footer')
 
     @include('layout.partials.footer-scripts')
-
 
 </body>
 

@@ -1,4 +1,5 @@
-@extends('layout.mainlayout')
+@extends('layout.mdm')
+@section('title', $project->description)
 
 @section('content')
 
@@ -16,6 +17,7 @@
         color: gray;
     }
 </style>
+
 <div class="container">
 
     <div class="row">

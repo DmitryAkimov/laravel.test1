@@ -17,7 +17,7 @@ class EmployeeController extends Controller
         $staff = Employee::all();
         
         //echo $projects;
-        return view('employee_index', ['staff' => $staff]);
+        return view('employee.list', ['staff' => $staff]);
     }
 
     /**
@@ -44,14 +44,13 @@ class EmployeeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        echo 'EMPLOYEE ' .$id;
         $employee = Employee::findOrFail($id);
-        return view('employee_show', ['employee' => $employee]);
+        return view('employee.item', ['employee' => $employee]);
     }
 
     /**

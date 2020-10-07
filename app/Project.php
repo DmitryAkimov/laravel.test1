@@ -241,7 +241,7 @@ class Project
     {
         $results = DB::connection('sqlsrv')->table('tbStaff')->get();
 
-        $users = DB::table('users')->get();
+        //$users = DB::table('users')->get();
 
         foreach ($results as $employee)
         {
