@@ -9,11 +9,9 @@
         @include('layout.mdm_head')
     </head>
     <body>
-
-
-        <div class="container">
-            @yield('content')
-        </div>
+       
+        @yield('content')
+        
         @include('layout.mdm_footer')
     </body>
 </html>

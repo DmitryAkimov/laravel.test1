@@ -58,6 +58,15 @@
                     <td>Бюджет</td>
                     <td><?php echo $project->getBudgetRender() ?></td>
                 </tr>
+
+                <tr>
+                    <td>Договор</td>
+                    <td>{!! str_replace(',','<br>' , $project->contract) !!}</td>
+                </tr>
+
+                <tr>
+                    <td>Заказчик</td>
+                    <td>{{ $project->customer }}</td>
                 </tr>
 
             </tbody>

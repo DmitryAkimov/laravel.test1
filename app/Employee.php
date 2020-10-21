@@ -8,19 +8,26 @@ use Illuminate\Support\Facades\DB;
 class Employee
 {
     //
-    var $Ref_Key;
-    var $SID;
-    var $FIO;
-    var $position;
-    var $department;
-    var $branch;
-    var $employeeID;
-    var $hiring;
-    var $dismissal;
-    var $isTimesheets;
-    var $MDM_SID;
-    var $MDM_group;
-    var $test;
+    public $Ref_Key;
+    public $FIO;
+    public $position;
+    public $department;
+    public $branch;
+    public $employeeID;
+    public $hiring;
+    public $dismissal;
+    public $isTimesheets;
+    public int $MDM_SID;
+    public string $MDM_group;
+    public string $MDM_Branch;
+    public $MDM_hiring;
+    public string $MDM_analytic;
+    public string $MDM_email;
+    public string $MDM_msDSPrincipalName;
+    public string $MDM_role;
+    public string $MDM_FRC;
+
+    public $test;
     //_____________________________________________________________________
     function loadFromArray($arr, $Ref_Key = '')
     {
@@ -88,11 +95,20 @@ class Employee
     //_____________________________________________________________________
     private function addMDMdata ()
     {
-        $results = DB::connection('sqlsrv')->table('tbStaff')->where('employeeID', $this->employeeID)->get();
+        $results = DB::connection('sqlsrv')->table('vStaff')->where('employeeID', (string)$this->employeeID)->get();
         if ($results) {
+            //print_r($results);
             $this->isTimesheets = ($results[0]->utilization == 1) ;
             $this->MDM_SID = $results[0]->SID;
             $this->MDM_group = $results[0]->group_name;
+            $this->MDM_hiring = convertToDate ($results[0]->hiring);
+            $this->MDM_branch = $results[0]->branch;
+            $this->MDM_position = $results[0]->position;
+            $this->MDM_analytic = $results[0]->analytic;
+            $this->MDM_email = $results[0]->email ;
+            $this->MDM_role = $results[0]->role_name ;
+            $this->MDM_msDSPrincipalName = $results[0]->{'msDS-PrincipalName'};
+            $this->MDM_FRC = $results[0]->frc_title ;
         }
     }    
 }
