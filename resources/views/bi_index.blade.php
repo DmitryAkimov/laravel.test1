@@ -1,4 +1,5 @@
-@extends('layout.mainlayout')
+@extends('layout.mdm')
+@section('title', 'Центр аналитики')
 
 @section('content')
 <style>
@@ -58,22 +59,22 @@
                 <i class="fa fa-file-alt"></i>
                 Загрузка по подразделениям-проектам</a>
             </li>
-
-            
+          
             
             <li class="list-group-item">
 
-              <a href="http://msql-5/ReportServer?/MDM/mdm-timesheets-sectors-experience" target="_blank">
-                <i class="fas fa-chart-pie"></i>
-                Опыт работы по секторам</a>
+              <a href="http://msql-5/ReportServer?/MDM/mdm-timesheets-timetable" target="_blank">
+                <i class="fa fa-file-alt"></i>
+                Табель по подразделению</a>
             </li>
+
             <li class="list-group-item">
               <a href="http://msql-5/ReportServer?/MDM/mdm-timesheets-analyze-chart" target="_blank">
                 <i class="far fa-chart-bar"></i>
                 Свод за год</a>
             </li>
             <li class="list-group-item">
-              <a href="https://bitrix.spgr.ru/company/mdm" target="_blank">
+              <a href="https://mdm.spectrum.repm/project" target="_blank">
                 <i class="fa fa-table"></i>
                 Список проектов</a>
             </li>
@@ -134,6 +135,12 @@
               <a href="http://msql-5/ReportServer?/FIN/fin-projects-portfolio">
                 <i class="fas fa-ruble-sign"></i>
                 Портфель проектов</a></li>
+                <li class="list-group-item">
+                  <a href="http://msql-5/ReportServer?/FIN/fin-forecast-project-execution-nearest-plan">
+                    <i class="fas fa-binoculars"></i>
+                    Прогноз выполнения на месяц</a>
+                </li>
+
           </ul>
         </div>
       </div>
