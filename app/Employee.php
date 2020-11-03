@@ -18,14 +18,14 @@ class Employee
     public $dismissal;
     public $isTimesheets;
     public int $MDM_SID;
-    public string $MDM_group;
-    public string $MDM_Branch;
+    public $MDM_group;
+    public $MDM_Branch;
     public $MDM_hiring;
-    public string $MDM_analytic;
-    public string $MDM_email;
-    public string $MDM_msDSPrincipalName;
-    public string $MDM_role;
-    public string $MDM_FRC;
+    public $MDM_analytic;
+    public $MDM_email;
+    public $MDM_msDSPrincipalName;
+    public $MDM_role;
+    public $MDM_FRC;
 
     public $test;
     //_____________________________________________________________________

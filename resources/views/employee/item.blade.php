@@ -58,7 +58,7 @@
                     <td>Аналитика</td>  <td></td>  <td>{{ $employee->MDM_analytic }}</td>  
                 </tr> 
                 <tr>
-                    <td>PrincipalName</td>  <td></td> <td>{{ $employee->MDM_msDSPrincipalName }}</td> 
+                    <td>msDS-PrincipalName</td>  <td></td> <td>{{ $employee->MDM_msDSPrincipalName }}</td> 
                 </tr> 
 
                 <tr>
