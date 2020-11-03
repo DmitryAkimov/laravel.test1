@@ -38,6 +38,10 @@ Route::get('/demo', function () {
   return view('demo');
 });
 
+Route::get('/test/sql', function () {
+  Employee::allSQL();
+});
+
 Route::get('/test', function () {
   //$response1C = Http::withBasicAuth('webreader', 'webreader')->post('http://m1c-dev1/1cdev-zup-uu/hs/funds_request/create?'. http_build_query (['a' => 'b', 'c'=>'d']) );
   $response1C = Http::withBasicAuth('webreader', 'webreader')->post('http://m1c-dev1/1cdev-zup-uu/hs/funds_request/create?', ['a' => 'b', 'c'=>'d'] );
@@ -45,6 +49,8 @@ Route::get('/test', function () {
   return  $response1C->body() . $response1C->status()         ;
   //return view('test');
 });
+
+
 
 Route::get('/info', function () {
   phpinfo();
