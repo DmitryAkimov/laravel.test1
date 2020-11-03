@@ -95,7 +95,8 @@ class Employee
     //_____________________________________________________________________
     private function addMDMdata ()
     {
-        $results = DB::connection('sqlsrv')->table('vStaff')->where('employeeID', (string)$this->employeeID)->get();
+        $emplID = (string)$this->employeeID;
+        $results = DB::connection('sqlsrv')->table('vStaff')->where('employeeID', $emplID)->get();
         if ($results) {
             //print_r($results);
             $this->isTimesheets = ($results[0]->utilization == 1) ;
