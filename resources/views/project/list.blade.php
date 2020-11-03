@@ -59,7 +59,7 @@
             "info": true,
             "processing": true,
             "language": {
-                "url": "js/dataTables.russian.json",
+                "url": "/js/dataTables.russian.json"
             }
         });
     });
