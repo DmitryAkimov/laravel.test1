@@ -25,7 +25,7 @@
             <thead>
                 <th style="text-align: right;">{{ $project->cipher }}</th>
                 <th>{{ $project->description }}</th>
-                </th>
+                
             </thead>
 
             <tbody>
@@ -68,7 +68,10 @@
                     <td>Заказчик</td>
                     <td>{{ $project->customer }}</td>
                 </tr>
-
+                <tr>
+                    <td>PID</td>
+                    <td>{{ $project->pid }}</td>
+                </tr>
             </tbody>
         </table>
 
